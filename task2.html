@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Java Script</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="demo"></div>
+        <button onclick="window.print()">click to print</button><br>
+        <div id="tra"></div>
+        <div id="toy"></div>
+        <div id="oper"></div>
+        <div id="oper1"></div>
+        <div id="oper2"></div>
+        <div id="oper3"></div>
+        <div id="emp"></div>
+        <div id="dt"></div>
+        <h1 id="mou"onmouseover="mouse1()">hello world!</h1>
+        <section>
+            <button onclick="displaytime()">click here to displaytime</button>
+        </section>
+        <!---->
+        <div id="len"></div>
+        <div id="len1"></div>
+        <div id="len2"></div>
+        <div id="len3"></div>
+        <div id="len4"></div>
+        <div id="len5"></div>
+        <div id="marks"></div>
+        <script>
+            document.getElementById("demo").innerHTML="This is the Jave Script page";
+            document.getElementById("demo").style.color="#ff0000";
+            document.write("Traning in Java Script");
+            /*window.alert("click to the Home page");*/
+            console.log("this is a java script console() page");
+            /*Object*/
+            const trainee={traineeName:'Adithya Vaka',education:'Btech',joiningdate:'18April2021',location:'kochi'};
+            document.getElementById("tra").innerHTML="Trainee Name:"+trainee.traineeName+"Education:"+trainee.education+"Joiningdate:"+trainee.joiningdate+"location:"+trainee.location;
+            /*Array*/
+            const toys = ['doll','teddy bear','kite','airplane','rubber ducky'];
+            document.getElementById("toy").innerHTML= toys;
+            document.getElementById("toy").style.textTransform ="capitalize";
+            /*Operators*/
+            var x=5;
+            var y= 10;
+            var z=x+y;
+            let a=x-y;
+            let b=x*y;
+            let c=x/y;
+            document.getElementById("oper").innerHTML=z;
+            document.getElementById("oper1").innerHTML=a;
+            document.getElementById("oper2").innerHTML=b;
+            document.getElementById("oper3").innerHTML=c;
+            /*Object Method*/
+            const employee={empid:1123,empname:"rajen", desg:"software engineer",empdetail:function(){
+                return this.empid+"Name is "+this.empname+"Rols"+this.desg;
+            }};
+            let data = employee.empdetail();
+            document.getElementById("emp").innerHTML=data;
+            /*event handler*/
+            function displaytime(){
+                document.getElementById("dt").innerHTML=Date();
+            }
+            /*mouse hover event*/
+            function mouse1(){
+                document.getElementById("mou").style.color="red";
+            }
+            function mouse2(){
+                document.getElementById("mou").style.color="none";
+            }
+            /**/
+            let str="this is a 'java script' demonstration";
+            let str2='Hello! enjoy the "Program"';
+            let st = str.length;
+            let st1= str.slice(10,21);
+            let st2= str.substring(11,21);
+            let st3= str.substr(11,15);
+            let st4= str.replace("demonstration", "present");
+            let st5= str.concat(str2);
+            document.getElementById("len").innerHTML=st;
+            document.getElementById("len1").innerHTML=st1;
+            document.getElementById("len2").innerHTML=st2;
+            document.getElementById("len3").innerHTML=st3;
+            document.getElementById("len4").innerHTML=st4;
+            document.getElementById("len5").innerHTML=st5;
+            /**/
+            let student ={stuname:"sai",storolno:1234,mathsmarks:90,sciencmarks:80,englishmarks:86,property:80,
+            total:function(){
+                return this.mathsmarks+this.sciencmarks+this.englishmarks+this.property;
+            },
+            studentdetail:function(){
+                return this.stuname+" rolno "+this.storolno+" mathsmarks "+this.mathsmarks+" sciencmarks "+this.sciencmarks+" englishmarks "+this.englishmarks+" property "+this.property+" Total "+this.total();
+            }
+
+        };
+        let Alldetails = student.studentdetail();
+            document.getElementById("marks").innerHTML=Alldetails;
+        </script>
+    </body>
+</html>
